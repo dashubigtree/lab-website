@@ -1,4 +1,4 @@
-# FAILAB
+# AIXLab
 
 這是一個使用 [Next.js](https://nextjs.org/) 建立的網站，使用 `create-next-app` 初始化，搭配 [MUI](https://mui.com/) 與 [Swiper](https://swiperjs.com/) 進行 UI 開發。
 
