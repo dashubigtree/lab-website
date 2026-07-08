@@ -1,9 +1,8 @@
 'use client';
 import * as React from 'react';
 import Image from 'next/image'
-import PropTypes from 'prop-types';
 
-import { Box, Typography, ListItem, Stack, Divider, Grid, Tabs, Tab, Link } from '@mui/material';
+import { Box, Typography, ListItem, Stack, Divider, Grid } from '@mui/material';
 
 import ViewStreamIcon from '@mui/icons-material/ViewStream';
 import PersonPinCircleOutlinedIcon from '@mui/icons-material/PersonPinCircleOutlined';
@@ -89,86 +88,7 @@ const Experience = ({ workplace, position, duringtime }) => (
     </Stack >
 )
 
-const MBACourses = [
-    { course: '數位金融概論111-1', link: 'https://moodle2.ntust.edu.tw/course/view.php?id=4405', img: 'digital-finance' }
-]
-const UniversityCourses = [
-    { course: '計算機概論 112-1', link: 'https://moodle2.ntust.edu.tw/course/view.php?id=8509', img: 'computer-science' },
-    { course: '數位金融概論 112-1', link: 'https://moodle2.ntust.edu.tw/course/view.php?id=8518', img: 'fintech' },
-    { course: '大數據分析導論 111-1', link: 'https://moodle2.ntust.edu.tw/course/view.php?id=4005', img: 'big-data' },
-    { course: '大數據分析導論 110-2', link: 'https://moodle2.ntust.edu.tw/course/view.php?id=1790', img: 'big-data' },
-    { course: '計算機概論 111-2', link: 'https://moodle2.ntust.edu.tw/course/view.php?id=5832', img: 'computer-science' }
-]
-const CourseGrid = ({ course, link, img }) => (
-    <Stack direction="column" justifyContent="center" alignItems="center"
-        spacing={2}
-        component={Link}
-        href={link}
-        target="_blank"
-        sx={{
-            textDecoration: 'none',
-            color: 'inherit',
-            bgcolor: 'white',
-            height: { xs: 200, sm: 250 },
-            transition: "transform 200ms ease-in-out",
-            "&:hover": {
-                cursor: "pointer",
-                boxShadow: "rgba(149, 157, 165, 0.2) 0px 8px 24px",
-                backgroundColor: "white",
-                transform: "scale(1.02)"
-            }
-        }}>
-        <Image
-            src={`/fields/${img}.svg`}
-            alt={img}
-            width={100}
-            height={100}
-        />
-        <Typography variant='body1' align="center" sx={{ fontWeight: 600 }}>
-            {course}
-        </Typography>
-    </Stack>
-)
-function CustomTabPanel(props) {
-    const { children, value, index, ...other } = props;
-
-    return (
-        <div
-            role="tabpanel"
-            hidden={value !== index}
-            id={`simple-tabpanel-${index}`}
-            aria-labelledby={`simple-tab-${index}`}
-            {...other}
-        >
-            {value === index && (
-                <Grid container spacing={{ xs: 2, md: 3, lg: 4 }} columns={{ xs: 4, sm: 9, md: 12, lg: 16 }} >
-                    {children}
-                </Grid>
-            )}
-        </div>
-    );
-}
-
-CustomTabPanel.propTypes = {
-    children: PropTypes.node,
-    index: PropTypes.number.isRequired,
-    value: PropTypes.number.isRequired,
-};
-
-function a11yProps(index) {
-    return {
-        id: `simple-tab-${index}`,
-        'aria-controls': `simple-tabpanel-${index}`,
-    };
-}
-
 export default function Information() {
-    const [value, setValue] = React.useState(0);
-
-    const handleChange = (event, newValue) => {
-        setValue(newValue);
-    };
-
     return (
         <Box sx={{ height: '100%' }}>
 
@@ -180,16 +100,16 @@ export default function Information() {
             </ListItem>
             <Grid container spacing={{ xs: 2, sm: 3 }} columns={{ xs: 4, sm: 8, md: 12 }} >
                 <Grid size={{ xs: 4, sm: 4, md: 3 }} >
-                    <AboutMe content='Chih-Chieh Chang (CCC) received the Ph.D. degree from the Department of Industrial and Information Management, National Cheng Kung University, in 2012. He is currently an Assistant Professor with the School of Management, National Taiwan University of Science Technology (NTUST).' icon={<PersonPinCircleOutlinedIcon sx={{ fontSize: 60, color: '#FFB400' }} />} />
+                    <AboutMe content='張智傑老師為國立臺灣科技大學管理學院助理教授，任職於管理學士班同時合聘資訊管理系碩士班甲組及人工智慧跨域科技研究所。張老師於國立成功大學工業與資訊管理學系取得博士學位，研究與教學領域涵蓋人工智慧、資料科學、機器學習、資料探勘、資訊管理與數位轉型等主題，並關注資訊科技在管理決策、企業應用與實務場域中的發展。' icon={<PersonPinCircleOutlinedIcon sx={{ fontSize: 60, color: '#FFB400' }} />} />
                 </Grid>
                 <Grid size={{ xs: 4, sm: 4, md: 3 }} >
-                    <AboutMe content='His research interests include machine learning, data mining, digital transformation and financial technology. Due to his past work experience, CCC puts more emphasis on the connection between practice and academic research.' icon={<InterestsOutlinedIcon sx={{ fontSize: 60, color: '#FFB400' }} />} />
+                    <AboutMe content='張老師目前帶領 AIX Lab（AI × Intelligent Transformation Lab｜人工智慧與智能轉型實驗室），以人工智慧與智能轉型為核心，研究方向涵蓋資料分析、圖神經網路、可信任人工智慧、隱私保護資料分析、大型語言模型應用、智慧營運與運動科技等議題。研究團隊重視方法發展與實務應用的結合，期望透過資料與智慧化技術，協助企業與組織提升決策品質、流程效率與服務創新能力。' icon={<InterestsOutlinedIcon sx={{ fontSize: 60, color: '#FFB400' }} />} />
                 </Grid>
                 <Grid size={{ xs: 4, sm: 4, md: 3 }}>
-                    <AboutMe content='His research has been published in some data mining and machine learning related journals, including Decision Support System (Q1), IEEE TCSS (Q2), Journal of Intelligent Manufacturing (Q1), and etc. He also has some conference papers presented in IEEE Big Data and GSIS.' icon={<CollectionsBookmarkOutlinedIcon sx={{ fontSize: 60, color: '#FFB400' }} />} />
+                    <AboutMe content='張老師近年發表多篇國內外會議與國際期刊論文，研究成果發表於 IEEE Transactions on Computational Social Systems (Q1)、Data Mining and Knowledge Discovery (Q2)、Computer Modeling in Engineering and Sciences (Q1)、Computers and Electrical Engineering (Q1) 等國際期刊。研究主題涵蓋圖學習、推薦系統、社群網路分析、小樣本資料預測、動態信任評估、影像辨識與運動科技等方向。' icon={<CollectionsBookmarkOutlinedIcon sx={{ fontSize: 60, color: '#FFB400' }} />} />
                 </Grid>
                 <Grid size={{ xs: 4, sm: 4, md: 3 }}>
-                    <AboutMe content='Regarding industry experience, he had eight years in Fubon Group including Fintech office and momo, which he focused on promoting using data science and machine learning tools to help enterprises to process digital transformation. He had finished projects: Robo advisor, Chatbot, Cross Domain data analysis platform.' icon={<DomainOutlinedIcon sx={{ fontSize: 60, color: '#FFB400' }} />} />
+                    <AboutMe content='在教學與學生指導方面，張老師重視跨域學習、專題實作與產業連結，鼓勵學生從真實問題出發，培養問題定義、資料處理、系統實作與成果表達能力。近年指導學生參與專題研究、國內外競賽與國科會大專生專題計畫，並於國內外等競賽中獲得成果、教學及研究上也有獲得相關獎項及肯定。 在研究與產學合作方面，張老師主持多項國科會與教育部教學創新相關計畫，並與產業夥伴合作推動資訊安全、風險評估、智慧情報、金融科技、醫療影像、遊戲產業與企業智慧化應用等主題，展現研究團隊在學術研究、實務應用與智能轉型上的整合能力。' icon={<DomainOutlinedIcon sx={{ fontSize: 60, color: '#FFB400' }} />} />
                 </Grid>
             </Grid>
 
@@ -223,38 +143,6 @@ export default function Information() {
 
                 </Grid>
             </Grid>
-
-
-            <SubTitle title="教授課程">
-                <Box sx={{ borderBottom: 1, borderColor: 'divider', mb: 3 }}>
-                    <Tabs
-                        value={value}
-                        onChange={handleChange}
-                        aria-label="basic tabs example"
-                        textColor='secondary'
-                        indicatorColor='secondary'
-                        centered
-                    >
-                        <Tab label="MBA" disableRipple {...a11yProps(0)} />
-                        <Tab label="大學部" disableRipple {...a11yProps(1)} />
-                    </Tabs>
-                </Box>
-
-                <CustomTabPanel value={value} index={0}>
-                    {MBACourses.map((mba, index) => (
-                        <Grid size={{ xs: 4, sm: 3, md: 4, lg: 4 }} key={index}>
-                            <CourseGrid course={mba.course} link={mba.link} img={mba.img} />
-                        </Grid>
-                    ))}
-                </CustomTabPanel>
-                <CustomTabPanel value={value} index={1}>
-                    {UniversityCourses.map((university, index) => (
-                        <Grid size={{ xs: 4, sm: 3, md: 4, lg: 4 }} key={index}>
-                            <CourseGrid course={university.course} link={university.link} img={university.img} />
-                        </Grid>
-                    ))}
-                </CustomTabPanel>
-            </SubTitle>
         </Box>
     );
 }

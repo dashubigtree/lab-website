@@ -23,10 +23,10 @@ function About() {
                     張智傑 Chih-Chieh Chang
                 </Typography>
                 <Typography variant="h6" sx={{ lineHeight: 'normal', fontWeight: 600, px: 1 }} align='center'>
-                    管理學士班/資管所甲組/人工智慧所 助理教授
+                    管理學士班/資管所甲組 助理教授
                 </Typography>
                 <Stack direction={{ xs: 'column', md: 'row' }} justifyContent='center' alignItems='center' spacing={2}>
-                    <Box sx={{ bgcolor: { xs: 'transparent', md: 'white' }, p: 1.5 }}>
+                    <Box sx={{ bgcolor: 'transparent', p: 1.5 }}>
                         <ListItem disableGutters>
                             <ListItemAvatar>
                                 <Tooltip title="Email" placement="left">
@@ -72,15 +72,25 @@ function About() {
                             </ListItemAvatar>
                             <ListItemText primary={
                                 <Typography variant="body1" >
-                                    Phone：+886-2737-6598
+                                    Phone：+886-2737-6598 
                                 </Typography>
+                                
                             } />
                         </ListItem>
+                        <ListItem disableGutters sx={{ justifyContent: 'center' }}>
+                            
+                            <ListItemText primary={
+                                <Typography variant="body1" align="center">
+                                    歡迎與我聯繫
+                                </Typography>
+                                
+                            } sx={{ textAlign: 'center' }} />
+                        </ListItem>
                     </Box>
-                    <Stack direction='column'>
-                        <Image src={`/QR code.jpg`} alt='QR code' width={100} height={100} />
+                    {/*<Stack direction='column'>
+                         <Image src={`/QR code.jpg`} alt='QR code' width={100} height={100} /> 
                         <Typography>歡迎與我聯繫</Typography>
-                    </Stack>
+                    </Stack>*/}
                 </Stack>
             </Stack>
         </Stack >
