@@ -2,6 +2,14 @@ import React from 'react';
 import { Stack, ListItem, Typography, ListItemText, ListItemAvatar } from '@mui/material';
 
 const data = [
+    { date: '2026/07', content: '「第一屆永續金融我最行－2026全國大專院校永續金融知識競賽」分區第5名' },
+    { date: '2026/07', content: '榮獲台科大優良研究教師' },
+    { date: '2026/07', content: '恭喜本研究團隊專題生榮獲國科會大專生專題計畫' },
+    { date: '2026/06', content: '榮獲台科大優良輔導教師' },
+    { date: '2026/06', content: '研究論文“Graph contrastive link prediction with theoretical guarantees via model-aware augmentations and structure-aware alignment to appear in Computers and Electrical Engineering' },
+    { date: '2026/02', content: '研究論文” Considering Cluster Validity in Attribute Extension for Small Data Set Predictions  “to appear in Journal of Advances in Information Technology ' },
+    { date: '2026/02', content: '研究論文” Constructing a Dynamic Trust Assessment Mechanism Combining Zero Knowledge Proof with Unsupervised Learning  “to appear in Computer Modeling in Engineering and Sciences ' },
+    { date: '2026/01', content: '研究論文” Constructing Time-Series Badminton Prediction Model within Gated Recurrent Units  “to appear in Journal of Advances in Information Technology ' },
     { date: '2025/12', content: '研究論文“Structure-based virtual sample generation using average-linkage clustering for small dataset problems” to appear in CMC-Computers, Materials & Continua.' },
     { date: '2025/11', content: '恭喜本研究團隊大學生專題獲得系上第一名' },
     { date: '2025/07', content: '研究論文“Food Classification via Vision Transformer with Data Augmentation on Small Datasets” to appear in Journal of Internet Technology.' },

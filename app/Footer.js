@@ -11,7 +11,7 @@ export default function Footer() {
                     display="block"
                     color="text.secondary"
                 >
-                    © Copyright <b>FAILab</b>. All Rights Reserved
+                    © Copyright <b>AIXLab</b>. All Rights Reserved
                 </Typography>
                 <Typography
                     variant="subtitle2"

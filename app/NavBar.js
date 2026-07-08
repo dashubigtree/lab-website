@@ -40,7 +40,7 @@ const LogoName = ({ flexGrow, variant, xs, md, letterSpacing }) => (
                 textDecoration: 'none'
             }}
         >
-            FAILAB
+            AIXLab
         </Typography>
     </Box>
 )
