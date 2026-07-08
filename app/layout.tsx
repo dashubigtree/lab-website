@@ -12,8 +12,8 @@ import Partners from './Partners'
 import Footer from './Footer'
 
 export const metadata: Metadata = {
-  title: '金融科技與人工智慧實驗室',
-  description: '臺灣科技大學-金融科技與人工智慧實驗室',
+  title: '人工智慧與智能轉型實驗室',
+  description: '臺灣科技大學-人工智慧與智能轉型實驗室',
 }
 
 
