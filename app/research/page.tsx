@@ -39,68 +39,39 @@ export default function Research() {
          <Box>
             <PageTitle title='研究領域' />
             <Typography variant='h6' >
-                FAILab 主要研究核心是以資料科學及人工智慧為技術核心，並引入如大型語言模型(LLM)及聯邦式學習(Federated Learning)等新技術進行研發及應用。研究團隊除資訊技術研發外，也針對行為理論、企業導入及數位轉型等管理議題進行探討；建構「資訊」與「管理」整合議題提升企業進行智慧化轉型
+                AIX Lab 主要研究核心是以資料科學及人工智慧為技術基礎，並引入大型語言模型（LLM）、AI 代理人、圖機器學習、隱私保護資料分析等技術進行研發與應用。研究團隊除資訊技術研發外，也關注企業導入、流程改善、智慧營運與智能轉型等管理議題，期望建構「資訊技術」與「管理應用」整合之研究方向，協助企業與組織推動智慧化升級與數位轉型。
             </Typography>
 
             <br />
             <Grid container spacing={3} columns={{ xs: 4, sm: 8, md: 12 }} >
                 <Grid size={{ xs: 4, sm: 8, md: 4 }} >
-                    <FieldGrid field="智慧轉型" >
-                        <FieldContent icon={<Looks1Icon color='primary' />} subfield='流程智慧化' subcontent='企業仍存在過多人工及重複性作業行為，可透過智慧化工具如RPA或是AI機制 將可協助企業進行流程智慧化，並運用AI進行流程監控及優化。' />
-                        <FieldContent icon={<Looks2Icon color='primary' />} subfield='AI代理人' subcontent='基於企業作業流程或客戶服務打造任務型AI代理人；我們將運用生成式AI與企業流程進行整合建構專屬AI代理人' />
+                    <FieldGrid field="智慧轉型與流程智慧化" >
+                        <FieldContent  subfield='企業在日常作業中仍存在許多人工、重複性與跨系統流程，可透過流程自動化、RPA、資料分析與人工智慧輔助機制，協助企業改善作業效率與管理品質。本研究團隊關注流程智慧化、流程監控、異常偵測、決策支援與營運改善，並探討智慧化技術導入後對企業流程、服務模式與組織管理的影響。' />
                     </FieldGrid>
                 </Grid>
                 <Grid size={{ xs: 4, sm: 8, md: 4 }}>
-                    <FieldGrid field="大型語言模型" >
-                        <FieldContent icon={<Looks1Icon color='primary' />} subfield='底層運作建構' />
-                        <FieldContent icon={<Looks2Icon color='primary' />} subfield='多模態資料處裡' />
-                        <FieldContent icon={<Looks3Icon color='primary' />} subfield='模型Fine-Tuning (SFT、LORA、Alignment)' />
-                        <FieldContent icon={<Looks4Icon color='primary' />} subfield='RAG建立' />
-                        <FieldContent icon={<Looks5Icon color='primary' />} subfield='相關企業服務串接及應用開發' />
-
+                    <FieldGrid field="AI 代理人與大型語言模型應用" >
+                        <FieldContent subfield='本研究團隊聚焦 AI 代理人與大型語言模型於企業場域中的導入與應用，結合生成式 AI、企業知識庫、RAG、模型微調、多模態資料處理與流程系統串接，建構具任務導向能力的智慧應用服務。研究內容包含資料查詢、文件處理、流程輔助、決策支援與客戶互動等應用，並探討其在企業智能轉型中的實務價值。' />
                     </FieldGrid>
                 </Grid>
                 <Grid size={{ xs: 4, sm: 8, md: 4 }}>
-                    <FieldGrid field="資料保護隱私技術" >
-                        <Typography variant="h6" sx={{ fontWeight: 700, mt: 1 }}>
-                            聯邦式學習框架 (Federated Learning)
-                        </Typography>
-                        <FieldContent icon={<Looks1Icon color='primary' />} subfield='水平、垂直機制建立 (Horizontal and Vertical)' />
-                        <FieldContent icon={<Looks2Icon color='primary' />} subfield='傳輸效率優化及平行運算(Resource Allocation and Optimization)' />
-                        <FieldContent icon={<Looks3Icon color='primary' />} subfield='可稽核性聯邦式學習(Auditable Federated Learning)' />
-                        <FieldContent icon={<Looks4Icon color='primary' />} subfield='資訊安全聯邦式學習(Security-based Federated Learning)' />
+                    <FieldGrid field="資料保護與隱私技術" >
+                        <FieldContent subfield='在跨組織與跨產業資料應用情境中，如何兼顧資料隱私、安全性與可稽核性，是資料分析與模型訓練的重要課題。本研究團隊以聯邦式學習（Federated Learning）為主要技術基礎，探討水平式與垂直式聯邦式學習框架、傳輸效率優化、平行運算、資源配置、模型訓練效率、可稽核聯邦式學習，以及資訊安全導向之資料共享機制，協助企業在不直接交換原始資料的情況下，進行跨域資料分析與模型建構。' />
                     </FieldGrid>
                 </Grid>
                 <Grid size={{ xs: 4, sm: 8, md: 4 }}>
                     <FieldGrid field="資料科學及人工智慧">
-                        <FieldContent icon={<Looks1Icon color='primary' />} subfield='自動化資料/模型生態系' />
-                        <Box ml={4} mt={0.5}>
-                            <Typography component="ul" sx={{ m: 0, pl: 2 }}>
-                                <Typography component="li" variant="body1">資料治理/模型治理框架建立</Typography>
-                                <Typography component="li" variant="body1">自動化學習框架 – 建構模型大軍</Typography>
-                            </Typography>
-                        </Box>
-                        <FieldContent icon={<Looks2Icon color='primary' />} subfield='深度學習/機器學習'  />
-                        <Box ml={4} mt={0.5}>
-                            <Typography component="ul" sx={{ m: 0, pl: 2 }}>
-                                <Typography component="li" variant="body1">時間序列分析 – 運用如RNN、LSTM預測客戶的下一步行為</Typography>
-                                <Typography component="li" variant="body1">圖探勘學習 – 建構圖拓樸運用Graph mining及Graph Neural Network進行分析提升關聯性資訊之運用</Typography>
-                            </Typography>
-                        </Box>
+                        <FieldContent  subfield='本研究團隊以資料科學、機器學習與深度學習為基礎，發展資料分析、模型建構、自動化學習與模型治理相關方法。研究內容包含資料前處理、模型訓練、模型評估、資料治理、模型治理、時間序列分析與預測模型等，並應用於客戶行為分析、異常偵測、風險評估、智慧推薦與企業決策支援等情境。' />
                     </FieldGrid>
                 </Grid>
                 <Grid size={{ xs: 4, sm: 8, md: 4 }}>
-                    <FieldGrid field="金融科技">
-                        <FieldContent icon={<Looks1Icon color='primary' />} subfield='數據整合' subcontent='解決跨產業資料使用困境，在保護隱私機制下建構可分析的跨產業資料' />
-                        <FieldContent icon={<Looks2Icon color='primary' />} subfield='單一登入機制驗證' subcontent='建構金控層跨單位單一登入機制，並基於不同風險設計驗證機制' />
-                        <FieldContent icon={<Looks3Icon color='primary' />} subfield='大數據及人工智慧應用' subcontent='建構客戶單一視圖，基於客戶行為運用人工智慧方式進行預測，可應用於異常偵測及Next Action。' />
-
+                    <FieldGrid field="圖機器學習">
+                        <FieldContent subfield='圖資料能有效描述人、物件、事件與組織之間的關聯。本研究團隊聚焦圖探勘、圖神經網路、圖對比學習、圖推薦系統、社群網路分析與多層圖結構分析等議題，探討如何透過圖結構提升關聯資訊的表徵與預測能力。應用場域包含推薦系統、社群網路、風險偵測、交易分析、團隊組成、資訊安全與企業關係資料分析。' />
                     </FieldGrid>
                 </Grid>
                 <Grid size={{ xs: 4, sm: 8, md: 4 }}>
-                    <FieldGrid field="運動科技-羽球">
-                        <FieldContent icon={<Looks1Icon color='primary' />} subfield='使用者軟體設計' subcontent='建構以客戶為體驗之羽球APP。' />
-                        <FieldContent icon={<Looks2Icon color='primary' />} subfield='訓練優化' subcontent='援等場景，提升模型準確度與智能化程度。' />
+                    <FieldGrid field="運動科技">
+                        <FieldContent subfield='本研究團隊關注人工智慧與資料分析技術在運動訓練、競賽分析與運動表現提升上的應用。研究內容包含運動影像辨識、動作分析、時間序列預測、訓練資料紀錄、戰術與策略分析、選手表現評估與智慧化訓練輔助系統。本研究團隊以羽球等運動場域為基礎，結合影像、感測、比賽紀錄與行為資料，協助教練與選手進行訓練優化與決策分析。' />
                     </FieldGrid>
                 </Grid>
             </Grid>

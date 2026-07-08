@@ -12,15 +12,12 @@ const NSTC = [
     '計畫主持人 111-2410-H-011 -041 -MY2 在保護個人隱私下建構跨產業資料共享框架 2022/10/01 ~ 2024/09/30',
 ]
 
-// 教育部計畫
-const MinistryofEducation = [
-    '計畫主持人，教師推動創新教學-教學與課程精進研究計畫 2025/09/01 ~ 2026/08/31',
-    '計畫主持人，教師推動創新教學-教學與課程精進研究計畫 2024/09/01 ~ 2025/08/31',
-    '計畫主持人，教師推動創新教學-教學與課程精進研究計畫 2023/09/01 ~ 2024/08/31',
-]
+
 
 // 產學合作案
 const IndustryCooperation = [
+    '計畫主持人，防詐模組資料與技術架構健檢案2026/03/21~2026/05/20',
+    '計畫主持人，資安AI引擎2.0-自動化智能郵件辨識與企業風險資料庫建置2026/01/01~2026/12/31',
     '共同主持人，零信任之信任推斷引擎AI外腦研究報告 2025/12/01~2026/07/31',
     '計畫主持人，遊戲產業智慧情報平台 2025/11/01~2026/06/30',
     '共同主持人，AI胚胎影像辨識 2025/10/01~2026/03/31',
@@ -38,8 +35,12 @@ const IndustryCooperation = [
 ]
 
 const JournalPaper = [
-    "C.-C. Chang, K.-I.-B. Anuar, and Y.-H. Liu. Structure-based virtual sample generation using average-linkage clustering for small dataset problems. To appear in CMC-Computers, Materials & Continua.",
-    "C.-C. Chang, Z.-X. Chen, and C.-C. Lin. Food Classification via Vision Transformer with Data Augmentation on Small Datasets. To appear in Journal of Internet Technology.",
+    "C.-C. Chang, Z.-X. Chen, and C.-C. Lin. Food Classification via Vision Transformer with Data Augmentation on Small Datasets. To appear in Journal of Internet Technology. ",
+    "C.-C. Chang and M.-H. Lin (2026). Graph contrastive link prediction with theoretical guarantees via model-aware augmentations and structure-aware alignment. Computers and Electrical Engineering, 139:111341.",
+    "N.-W. Lo, C.-I Lin, C.-C. Chang*, C.-Y. Chang, and L.-L. Tran (2026). Constructing a Dynamic Trust Assessment Mechanism Combining Zero Knowledge Proof with Unsupervised Learning. Computer Modeling in Engineering and Sciences, 147(1):1-10",
+    "L.-L. Tran, C.-C. Chang*, and H.-A. Yu (2026). Considering Cluster Validity in Attribute Extension for Small Data Set Predictions. Journal of Advances in Information Technology (ESCI), 17(5): 914-928.",
+    "C.-C. Chang, K.-I.-B. Anuar, and Y.-H. Liu  (2026). Structure-based virtual sample generation using average-linkage clustering for small dataset problems. Computers, Materials & Continua, 87(1): 34",
+    "M.-H. Lin, L.-L. TRAN, H.-Y. Chen, and C.-C. Chang* (2026). Constructing Time-Series Badminton Prediction Model within Gated Recurrent Units. Journal of Advances in Information Technology (ESCI), 17(4): 749-758.",
     "C.-C. Chang, C.-H. Lu, M.-Y. Chang, C.-E. Shen, Y.-C. Ho, and C.-Y. Shen (2024). Learning to Augment Graphs: Machine Learning-based Social Network Intervention with Self-Supervision. IEEE Transactions on Computational Social Systems, 11(3): 3286-3298.",
     "C.-C. Chang, C.-H. Lu, S.-J. Teng, M.-Y. Chang, Y.-C. Ho, and C.-Y. Shen (2024). Maximizing (k, L)-core with Edge Augmentation in Multi-Layer Graphs. IEEE Transactions on Computational Social Systems, 11(3): 3931-3943.",
     "C.-C. Chang, D.-R. Tseng, C.-H. Lu, M.-Y. Chang, and C.-Y. Shen (2024). Improving graph-based recommendation with unraveled graph learning. Data Mining and Knowledge Discovery, 38(4), 2440-2465.",
@@ -80,6 +81,15 @@ const guestEditor = [
 
 // 期刊論文審稿
 const journalReviewer = [
+    'Decision Support Systems/2023、2025',
+    'Information Processing & Management/2026',
+    'Journal of Information Science and Engineering/2023、2026',
+    'The Computer Journal/2026',
+    'IEEE Transactions on Computational Social Systems/2024',
+    'Sensors and Materials/2024',
+    'Machine Vision and Applications/2026',
+    'Journal of Big Data/2024',
+    'Journal of Supercomputing/2025',
     'Decision Support Systems/2023',
     'Journal of Information Science and Engineering/2023',
     'IEEE Transactions on Computational Social Systems/2024',
@@ -98,6 +108,10 @@ const academicActivities = [
 
 // 個人相關獎項
 const personalAwards = [
+    '114學年度 優良研究獎',
+    '114學年度 優良輔導教師',
+    '114-2學年度-優化 EMI 教學技巧獎勵(專案管理)',
+    '114-1學年度-優化 EMI 教學技巧獎勵(計算機概論)',
     '113-1學年度-優化 EMI 教學技巧獎勵(計算機概論)',
     '113 全國大專教職員乙組男女混和雙打亞軍',
     '112-1學年度-創新教學模式獎勵(數位金融概論)',
@@ -109,6 +123,7 @@ const personalAwards = [
 
 // 指導學生競賽成果
 const studentCompetitionAchievements = [
+    '2026/07 「第一屆永續金融我最行－2026全國大專院校永續金融知識競賽」分區第5名',
     '2025/06 2025全球GCMF 銀質獎',
     '2024/12 2024全球品牌策劃 第一名&銀質獎',
     '2024/12 指導學生參加第七屆法遵科技與電腦稽核專題競賽 – 冠軍',
@@ -142,10 +157,7 @@ export default function Result() {
                         國科會計畫
                     </Typography>
                     <CusStepper data={NSTC} />
-                    <Typography variant='h6' color='secondary'>
-                        教育部計畫
-                    </Typography>
-                    <CusStepper data={MinistryofEducation} />
+                    
                     <Typography variant='h6' color='secondary'>
                         產學合作案
                     </Typography>
