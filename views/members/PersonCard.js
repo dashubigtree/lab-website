@@ -3,13 +3,6 @@ import { Stack, ListItemText, Typography, Avatar, Divider } from '@mui/material'
 import { classNames } from '@/content/members'
 import { useDictionary, useLocale } from '@/i18n/LocaleProvider'
 
-// 學年度：中文顯示民國年（114），英文換算成西元（2025–26）
-const formatYear = (year, locale) => {
-    if (locale === 'zh') return year
-    const start = Number(year) + 1911
-    return `${start}–${String(start + 1).slice(-2)}`
-}
-
 const Details = ({ person }) => {
     const locale = useLocale()
     const t = useDictionary().members
@@ -21,18 +14,18 @@ const Details = ({ person }) => {
                 {t.name}{name}
             </Typography>
             <Typography component="span" variant="body2" color="text">
-                {t.class}{classNames[person.class][locale]}
+                {t.class}{classNames[person.class]}
             </Typography>
             <Typography component="span" variant="body2" color="text">
-                {t.year}{formatYear(person.year, locale)}
+                {t.year}{person.year}
             </Typography>
             {person.co_advisor &&
                 <Typography component="span" variant="body2" color="text">
-                    {t.coAdvisor}{person.co_advisor[locale]}
+                    {t.coAdvisor}{person.co_advisor}
                 </Typography>
             }
             <Typography component="span" variant="body2" color="text">
-                {t.researchField}{person.researchfield[locale]}
+                {t.researchField}{person.researchfield}
             </Typography>
         </>
     )

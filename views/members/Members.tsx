@@ -5,7 +5,7 @@ import PersonCard from './PersonCard'
 import SubTitle from '@/components/SubTitle'
 import React from 'react'
 import { classNames, emba, master, phd, undergraduate, type Member } from '@/content/members'
-import { useDictionary, useLocale } from '@/i18n/LocaleProvider'
+import { useDictionary } from '@/i18n/LocaleProvider'
 
 const CusGrid = ({ data }: any) => (
     <Box py={2}>
@@ -29,7 +29,6 @@ const CusGrid = ({ data }: any) => (
 )
 
 export default function Members() {
-    const locale = useLocale()
     const t = useDictionary().members
     const [selectedClass, setSelectedClass] = React.useState<Member['class'] | ''>('');
 
@@ -68,7 +67,7 @@ export default function Members() {
                     {classOptions.map((className, index) => (
                         <Chip
                             key={index}
-                            label={classNames[className][locale]}
+                            label={classNames[className]}
                             clickable
                             onClick={() => handleClassFilter(className)}
                             sx={{ mr: 1, mb: 1 }}
