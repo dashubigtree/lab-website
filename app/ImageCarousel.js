@@ -37,7 +37,7 @@ function ImageCarousel() {
                 label: item.label,
                 groupIndex,
                 text: segText ?? item.text, // 有分段就用分段，沒有就用原本 item.text
-                src: `lab-photo/${item.label}/${photoNo}.jpg`,
+                src: `/lab-photo/${item.label}/${photoNo}.jpg`,
             };
             })
         );
