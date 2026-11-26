@@ -1,21 +1,24 @@
 import * as React from 'react';
 import { Stack, ListItemText, Typography, Avatar, Divider } from '@mui/material'
+import { useDictionary } from '@/i18n/LocaleProvider'
 
-const EMBA = ({ person }) => (
+const EMBA = ({ person }) => {
+    const t = useDictionary().members
+    return (
     <>
         <Typography
             component="span"
             variant="body2"
             color="text"
         >
-            姓名：{person.name}
+            {t.name}{person.name}
         </Typography>
         <Typography
             component="span"
             variant="body2"
             color="text"
         >
-            學年度：{person.year}
+            {t.year}{person.year}
         </Typography>
         <Typography
             component="span"
@@ -29,33 +32,36 @@ const EMBA = ({ person }) => (
             variant="body2"
             color="text"
         > */}
-            研究方向：{person.researchfield}
+            {t.researchField}{person.researchfield}
         </Typography>
     </>
-)
+    )
+}
 
-const Master = ({ person }) => (
+const Master = ({ person }) => {
+    const t = useDictionary().members
+    return (
     <>
         <Typography
             component="span"
             variant="body2"
             color="text"
         >
-            姓名：{person.name}
+            {t.name}{person.name}
         </Typography>
         <Typography
             component="span"
             variant="body2"
             color="text"
         >
-            班別：{person.class}
+            {t.class}{person.class}
         </Typography>
         <Typography
             component="span"
             variant="body2"
             color="text"
         >
-            學年度：{person.year}
+            {t.year}{person.year}
         </Typography>
         {person.co_advisor &&
             <Typography
@@ -63,7 +69,7 @@ const Master = ({ person }) => (
                 variant="body2"
                 color="text"
             >
-                共同指導：{person.co_advisor}
+                {t.coAdvisor}{person.co_advisor}
             </Typography>
         }
         <Typography
@@ -71,33 +77,36 @@ const Master = ({ person }) => (
             variant="body2"
             color="text"
         >
-            研究方向：{person.researchfield}
+            {t.researchField}{person.researchfield}
         </Typography>
     </>
-)
+    )
+}
 
-const Undergraduate = ({ person }) => (
+const Undergraduate = ({ person }) => {
+    const t = useDictionary().members
+    return (
     <>
         <Typography
             component="span"
             variant="body2"
             color="text"
         >
-            姓名：{person.name}
+            {t.name}{person.name}
         </Typography>
         <Typography
             component="span"
             variant="body2"
             color="text"
         >
-            班別：{person.class}
+            {t.class}{person.class}
         </Typography>
         <Typography
             component="span"
             variant="body2"
             color="text"
         >
-            學年度：{person.year}
+            {t.year}{person.year}
         </Typography>
         {person.co_advisor &&
             <Typography
@@ -105,7 +114,7 @@ const Undergraduate = ({ person }) => (
                 variant="body2"
                 color="text"
             >
-                共同指導：{person.co_advisor}
+                {t.coAdvisor}{person.co_advisor}
             </Typography>
         }
         <Typography
@@ -113,10 +122,11 @@ const Undergraduate = ({ person }) => (
             variant="body2"
             color="text"
         >
-            研究方向：{person.researchfield}
+            {t.researchField}{person.researchfield}
         </Typography>
     </>
-)
+    )
+}
 
 
 export default function PersonCard({ person }) {

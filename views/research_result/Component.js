@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types';
 import { Box, Typography, Tabs, Tab, Stepper, Step, StepLabel, StepContent } from '@mui/material';
+import { useDictionary } from '@/i18n/LocaleProvider';
 
 function a11yProps(index) {
     return {
@@ -10,6 +11,7 @@ function a11yProps(index) {
 }
 
 function CustomTab({ value, handleChange }) {
+    const t = useDictionary().results
 
     return (
         <Tabs
@@ -23,19 +25,19 @@ function CustomTab({ value, handleChange }) {
             <Tab disableRipple {...a11yProps(0)}
                 label={
                     <Typography variant="body1" noWrap>
-                        計畫/產學
+                        {t.tabProjects}
                     </Typography>
                 } />
             <Tab disableRipple {...a11yProps(1)}
                 label={
                     <Typography variant="body1" noWrap>
-                        論文發表
+                        {t.tabPapers}
                     </Typography>
                 } />
             <Tab disableRipple {...a11yProps(2)}
                 label={
                     <Typography variant="body1" noWrap>
-                        學術活動
+                        {t.tabActivities}
                     </Typography>
                 } />
         </Tabs>

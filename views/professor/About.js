@@ -1,3 +1,4 @@
+'use client'
 import React from 'react'
 import Image from 'next/image'
 
@@ -6,8 +7,11 @@ import { Box, Typography, ListItem, ListItemAvatar, Tooltip, ListItemText, Avata
 import EmailIcon from '@mui/icons-material/Email';
 import BusinessIcon from '@mui/icons-material/Business';
 import SmartphoneIcon from '@mui/icons-material/Smartphone';
+import { useDictionary } from '@/i18n/LocaleProvider';
 
 function About() {
+    const t = useDictionary().professor
+
     return (
         <Stack justifyContent='space-evenly' flexDirection={{ xs: 'column', sm: 'row' }} sx={{ bgcolor: '#F5F5F5', borderRadius: 5 }} spacing={2}>
             <Stack alignItems='center'>
@@ -23,7 +27,7 @@ function About() {
                     張智傑 Chih-Chieh Chang
                 </Typography>
                 <Typography variant="h6" sx={{ lineHeight: 'normal', fontWeight: 600, px: 1 }} align='center'>
-                    管理學士班/資管所甲組 助理教授
+                    {t.role}
                 </Typography>
                 <Stack direction={{ xs: 'column', md: 'row' }} justifyContent='center' alignItems='center' spacing={2}>
                     <Box sx={{ bgcolor: 'transparent', p: 1.5 }}>
@@ -38,7 +42,7 @@ function About() {
                             <ListItemText primary={
                                 <Stack direction="row">
                                     <Typography variant="body1" >
-                                        Mail：
+                                        {t.mail}
                                     </Typography>
                                     <Typography component={Link} variant="body1" color='secondary' href='mailto:ccchang@mail.ntust.edu.tw' sx={{ textDecoration: 'underline' }}>
                                         ccchang@mail.ntust.edu.tw
@@ -57,7 +61,7 @@ function About() {
                             </ListItemAvatar>
                             <ListItemText primary={
                                 <Typography variant="body1">
-                                    Office： MA-205-4
+                                    {t.office}MA-205-4
                                 </Typography>
                             } />
                         </ListItem>
@@ -72,7 +76,7 @@ function About() {
                             </ListItemAvatar>
                             <ListItemText primary={
                                 <Typography variant="body1" >
-                                    Phone：+886-2737-6598 
+                                    {t.phone}+886-2737-6598
                                 </Typography>
                                 
                             } />
@@ -81,7 +85,7 @@ function About() {
                             
                             <ListItemText primary={
                                 <Typography variant="body1" align="center">
-                                    歡迎與我聯繫
+                                    {t.contact}
                                 </Typography>
                                 
                             } sx={{ textAlign: 'center' }} />

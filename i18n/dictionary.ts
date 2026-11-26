@@ -33,6 +33,39 @@ const zh = {
         title: '合作夥伴',
         invite: '歡迎企業洽談合作！',
     },
+    professor: {
+        title: '指導教授',
+        aboutMe: '關於我',
+        experience: '經歷',
+        education: '學歷',
+        role: '管理學士班/資管所甲組 助理教授',
+        mail: 'Mail：',
+        office: 'Office： ',
+        phone: 'Phone：',
+        contact: '歡迎與我聯繫',
+    },
+    research: {
+        title: '研究領域',
+    },
+    results: {
+        title: '研究成果',
+        tabProjects: '計畫/產學',
+        tabPapers: '論文發表',
+        tabActivities: '學術活動',
+        nstc: '國科會計畫',
+        industry: '產學合作案',
+        journal: 'Journal Paper',
+        conference: 'Conference Paper',
+        guestEditor: '客座編輯(Guest Editor)',
+        reviewer: '期刊論文審稿',
+        activities: '其他學術活動',
+        awards: '個人相關獎項',
+        students: '指導學生競賽成果',
+    },
+    alumni: {
+        title: '畢業校友',
+        list: '成員列表',
+    },
 }
 
 const en: typeof zh = {
@@ -67,6 +100,39 @@ const en: typeof zh = {
     partners: {
         title: 'Partners',
         invite: 'We welcome industry collaboration!',
+    },
+    professor: {
+        title: 'Advisor',
+        aboutMe: 'About Me',
+        experience: 'Experience',
+        education: 'Education',
+        role: 'Assistant Professor',
+        mail: 'Mail: ',
+        office: 'Office: ',
+        phone: 'Phone: ',
+        contact: 'Feel free to contact me',
+    },
+    research: {
+        title: 'Research Areas',
+    },
+    results: {
+        title: 'Research Achievements',
+        tabProjects: 'Projects',
+        tabPapers: 'Publications',
+        tabActivities: 'Academic Activities',
+        nstc: 'NSTC Research Projects',
+        industry: 'Industry–Academia Collaborations',
+        journal: 'Journal Papers',
+        conference: 'Conference Papers',
+        guestEditor: 'Guest Editor',
+        reviewer: 'Journal Peer Review',
+        activities: 'Other Academic Activities',
+        awards: 'Honors and Awards',
+        students: 'Student Competition Achievements',
+    },
+    alumni: {
+        title: 'Alumni',
+        list: 'Member List',
     },
 }
 
