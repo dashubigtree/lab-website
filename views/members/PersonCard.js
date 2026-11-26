@@ -25,7 +25,7 @@ const Details = ({ person }) => {
                 </Typography>
             }
             <Typography component="span" variant="body2" color="text">
-                {t.researchField}{person.researchfield}
+                {t.researchField}{person.researchfield[locale]}
             </Typography>
         </>
     )

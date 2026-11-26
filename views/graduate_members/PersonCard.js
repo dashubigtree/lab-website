@@ -1,8 +1,9 @@
 import * as React from 'react';
 import { Stack, ListItemText, Typography, Avatar, Divider } from '@mui/material'
-import { useDictionary } from '@/i18n/LocaleProvider'
+import { useDictionary, useLocale } from '@/i18n/LocaleProvider'
 
 const EMBA = ({ person }) => {
+    const locale = useLocale()
     const t = useDictionary().members
     return (
     <>
@@ -32,13 +33,14 @@ const EMBA = ({ person }) => {
             variant="body2"
             color="text"
         > */}
-            {t.researchField}{person.researchfield}
+            {t.researchField}{person.researchfield[locale]}
         </Typography>
     </>
     )
 }
 
 const Master = ({ person }) => {
+    const locale = useLocale()
     const t = useDictionary().members
     return (
     <>
@@ -77,13 +79,14 @@ const Master = ({ person }) => {
             variant="body2"
             color="text"
         >
-            {t.researchField}{person.researchfield}
+            {t.researchField}{person.researchfield[locale]}
         </Typography>
     </>
     )
 }
 
 const Undergraduate = ({ person }) => {
+    const locale = useLocale()
     const t = useDictionary().members
     return (
     <>
@@ -122,7 +125,7 @@ const Undergraduate = ({ person }) => {
             variant="body2"
             color="text"
         >
-            {t.researchField}{person.researchfield}
+            {t.researchField}{person.researchfield[locale]}
         </Typography>
     </>
     )
