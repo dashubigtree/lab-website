@@ -2,7 +2,7 @@
 import * as React from 'react';
 import { Box, Grid, Typography } from '@mui/material';
 
-import PageTitle from '../PageTitle'
+import PageTitle from '@/components/PageTitle'
 import { CustomTab, CustomTabPanel, CusStepper } from './Component'
 
 // 國科會計畫

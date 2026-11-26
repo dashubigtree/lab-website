@@ -1,8 +1,8 @@
 'use client'
 import { Box, Chip, Grid, Avatar } from '@mui/material'
-import PageTitle from '../PageTitle'
+import PageTitle from '@/components/PageTitle'
 import PersonCard from './PersonCard'
-import SubTitle from '../SubTitle'
+import SubTitle from '@/components/SubTitle'
 import React from 'react'
 
 const Master = [

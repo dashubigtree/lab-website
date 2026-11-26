@@ -2,8 +2,8 @@
 import React from 'react'
 import { Box } from '@mui/material';
 
-import PageTitle from '../PageTitle';
-import SubTitle from '../SubTitle'
+import PageTitle from '@/components/PageTitle';
+import SubTitle from '@/components/SubTitle'
 import Card from './Card'
 
 const Marketing = [

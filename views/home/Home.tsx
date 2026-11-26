@@ -3,8 +3,8 @@ import React from 'react';
 import { Box, Stack, Typography, Grid, ListItem } from '@mui/material'
 import ViewStreamIcon from '@mui/icons-material/ViewStream';
 
-import ImageCarousel from './ImageCarousel'
-import LatestNews from './LatestNews'
+import ImageCarousel from '@/components/ImageCarousel'
+import LatestNews from '@/components/LatestNews'
 import Image from 'next/image';
 
 const Title = ({ title }: any) => (

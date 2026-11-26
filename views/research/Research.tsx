@@ -5,7 +5,7 @@ import Looks2Icon from '@mui/icons-material/LooksTwo';
 import Looks3Icon from '@mui/icons-material/Looks3';
 import Looks4Icon from '@mui/icons-material/Looks4';
 import Looks5Icon from '@mui/icons-material/Looks5';
-import PageTitle from '../PageTitle'
+import PageTitle from '@/components/PageTitle'
 
 const FieldGrid = ({ field, children }: any) => (
     <Card elevation={0} sx={{ bgcolor: '#F5F5F5', borderRadius: 5 }}>

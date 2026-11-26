@@ -10,7 +10,7 @@ import InterestsOutlinedIcon from '@mui/icons-material/InterestsOutlined';
 import CollectionsBookmarkOutlinedIcon from '@mui/icons-material/CollectionsBookmarkOutlined';
 import DomainOutlinedIcon from '@mui/icons-material/DomainOutlined';
 
-import SubTitle from '../SubTitle'
+import SubTitle from '@/components/SubTitle'
 
 const AboutMe = ({ title, content, icon }) => (
     <Stack direction={{ xs: 'row', sm: 'column' }} justifyContent='space-evenly' spacing={2} sx={{ bgcolor: '#F5F5F5', p: 2, borderRadius: 5, minHeight: { md: 320 } }}>

@@ -5,7 +5,7 @@ import { Box, Grid } from '@mui/material'
 
 import About from './About'
 import Information from './Information'
-import PageTitle from '../PageTitle'
+import PageTitle from '@/components/PageTitle'
 
 export default function Professor() {
     return (

@@ -12,6 +12,7 @@ import MenuBookIcon from '@mui/icons-material/MenuBook';
 import ScienceIcon from '@mui/icons-material/Science';
 import GroupsIcon from '@mui/icons-material/Groups';
 import Link from 'next/link';
+import { basePath } from '@/i18n/config';
 
 const pages = [
     { item: '指導教授', href: '/professor', icon: <PersonIcon /> },
@@ -56,7 +57,7 @@ const CusToolbar = ({ display, children }) => (
 function NavBar() {
     const [anchorElNav, setAnchorElNav] = React.useState(null);
 
-    const pathname = usePathname()
+    const pathname = basePath(usePathname())
 
     const handleOpenNavMenu = (e) => {
         setAnchorElNav(e.currentTarget);

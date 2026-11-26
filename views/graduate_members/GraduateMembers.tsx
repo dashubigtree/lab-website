@@ -1,8 +1,8 @@
 'use client'
 import { Box, Typography, Grid, Avatar } from '@mui/material'
-import PageTitle from '../PageTitle'
+import PageTitle from '@/components/PageTitle'
 import PersonCard from './PersonCard'
-import SubTitle from '../SubTitle'
+import SubTitle from '@/components/SubTitle'
 
 const _GraduateMember = [
     { grade: 'Master', name: 'Khairul Izyan Bin Anuar', class: 'MBA', year: '110', imgSrc: '/110/Khairul Izyan Bin Anuar', researchfield: '小樣本、機器學習', email: 'M11021805@mail.ntust.edu.tw' },
