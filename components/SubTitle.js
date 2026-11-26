@@ -7,7 +7,7 @@ function SubTitle({ title, children }) {
         <>
             <ListItem disableGutters>
                 <ViewStreamIcon fontSize="large" color='secondary' sx={{ mr: 1 }} />
-                <Typography variant="h5" noWrap sx={{ lineHeight: 'normal', fontWeight: 700 }}>
+                <Typography variant="h5" sx={{ lineHeight: 'normal', fontWeight: 700 }}>
                     {title}
                 </Typography>
             </ListItem>

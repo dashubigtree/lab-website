@@ -3,27 +3,31 @@
 import Image from "next/image";
 import { Box, Typography } from "@mui/material";
 import MarqueeEffect from "react-fast-marquee";
+import { useDictionary, useLocale } from "@/i18n/LocaleProvider";
 
 const partners = [
-    { name:"土地銀行", logo: "partners/land_bank.jpg" },
-    { name:"工研院", logo: "partners/itri.jpg" },
-    { name: "中華郵政", logo: "partners/chunghwa_post.jpg" },
-    { name: "精誠資訊", logo: "partners/SYSTEX.jpg" },
-    { name: "明美科技", logo: "partners/MMT.jpg" },
-    { name: "台北富邦銀行", logo: "partners/fubon.jpg" },
-    { name: "鈊象電子", logo: "partners/iGS.jpg" },
-    { name: "英業達", logo: "partners/inventec.jpg" },
-    { name: "來毅數位科技", logo: "partners/keypasco.jpg" },
-    { name: "耐斯診所", logo: "partners/nice_clinic.jpg" },
-    { name:"基點科技", logo:"partners/cellopoint.jpg"}
+    { name: { zh: "土地銀行", en: "Land Bank of Taiwan" }, logo: "partners/land_bank.jpg" },
+    { name: { zh: "工研院", en: "ITRI" }, logo: "partners/itri.jpg" },
+    { name: { zh: "中華郵政", en: "Chunghwa Post" }, logo: "partners/chunghwa_post.jpg" },
+    { name: { zh: "精誠資訊", en: "SYSTEX" }, logo: "partners/SYSTEX.jpg" },
+    { name: { zh: "明美科技", en: "MMT" }, logo: "partners/MMT.jpg" },
+    { name: { zh: "台北富邦銀行", en: "Taipei Fubon Bank" }, logo: "partners/fubon.jpg" },
+    { name: { zh: "鈊象電子", en: "IGS" }, logo: "partners/iGS.jpg" },
+    { name: { zh: "英業達", en: "Inventec" }, logo: "partners/inventec.jpg" },
+    { name: { zh: "來毅數位科技", en: "Lydsec" }, logo: "partners/keypasco.jpg" },
+    { name: { zh: "耐斯診所", en: "Nice Clinic" }, logo: "partners/nice_clinic.jpg" },
+    { name: { zh: "基點科技", en: "Cellopoint" }, logo:"partners/cellopoint.jpg"}
 ];
 
 export default function MarqueePartners() {
+    const locale = useLocale();
+    const t = useDictionary().partners;
+
     return (
         <Box sx={{ width: "100%", overflow: "hidden", py: 2, backgroundColor: "#f4f4f4" }}>
             <Box sx={{ display: "flex", justifyContent: "center", mb: 2 }}>
                 <Typography variant="h5" color="secondary" align="center" sx={{ fontWeight: 700 }}>
-                    合作夥伴
+                    {t.title}
                 </Typography>
             </Box>
 
@@ -61,7 +65,7 @@ export default function MarqueePartners() {
                             >
                                 <Image
                                     src={`/${partner.logo}`}
-                                    alt={partner.name}
+                                    alt={partner.name[locale]}
                                     fill
                                     style={{
                                         objectFit: 'contain',
@@ -82,7 +86,7 @@ export default function MarqueePartners() {
                                     fontSize: { xs: "0.75rem", sm: "0.875rem", md: "1rem" },
                                 }}
                             >
-                                {partner.name}
+                                {partner.name[locale]}
                             </Typography>
                         </Box>
                     ))}
@@ -91,7 +95,7 @@ export default function MarqueePartners() {
 
             <Box sx={{ display: "flex", justifyContent: "center" }}>
                 <Typography variant="h6" align="center">
-                    歡迎企業洽談合作！
+                    {t.invite}
                 </Typography>
             </Box>
         </Box>

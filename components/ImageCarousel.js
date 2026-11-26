@@ -6,22 +6,24 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/autoplay';
+import { useLocale } from '@/i18n/LocaleProvider';
 
 const images = [
     {
         label: '114',
         photoCount: 20, // 114 今年總張數（1~20）
         segments: [
-            { start: 1, end: 7, text: '🏈Sports Nation 迎新送舊' },
-            { start: 8, end: 20, text: '🎊114年 期末聖誕暨尾牙聚餐' },
+            { start: 1, end: 7, text: { zh: '🏈Sports Nation 迎新送舊', en: "🏈 Sports Nation: Welcome and Farewell Party" } },
+            { start: 8, end: 20, text: { zh: '🎊114年 期末聖誕暨尾牙聚餐', en: "🎊 2025 Year-End Christmas Party and Dinner" } },
         ]
     },    
-    { label: '113', text: '🍸Cheers&Co.餐酒館', photoCount: 34 },
-    { label: '112', text: '🎉饗食天堂', photoCount: 2 },
-    { label: '111', text: '🎄聖誕期末聚餐', photoCount: 4 },
+    { label: '113', text: { zh: '🍸Cheers&Co.餐酒館', en: "🍸 Cheers&Co. Bistro" }, photoCount: 34 },
+    { label: '112', text: { zh: '🎉饗食天堂', en: "🎉 Eatogether Buffet" }, photoCount: 2 },
+    { label: '111', text: { zh: '🎄聖誕期末聚餐', en: "🎄 Christmas Year-End Dinner" }, photoCount: 4 },
 ];
 
 function ImageCarousel() {
+    const locale = useLocale();
     const swiperRef = useRef(null);
     const [activeIndex, setActiveIndex] = useState(0);
 
@@ -85,7 +87,7 @@ function ImageCarousel() {
                         <Chip
                             key={i}
                             variant={currentGroupIndex === i ? 'filled' : 'outlined'}
-                            label={`${item.label} 年`}
+                            label={locale === 'zh' ? `${item.label} 年` : Number(item.label) + 1911}
                             onClick={() => handleChipClick(i)}
                             sx={{ cursor: 'pointer' }}
                         />
@@ -124,7 +126,7 @@ function ImageCarousel() {
                             <Box
                                 component="img"
                                 src={item.src}
-                                alt={item.text}
+                                alt={item.text[locale]}
                                 sx={{
                                     position: 'absolute',
                                     top: 0,
@@ -140,7 +142,7 @@ function ImageCarousel() {
             </Swiper>
 
             <Typography align="center" sx={{ mt: 1 }}>
-                {allSlides[activeIndex]?.text} - {activeIndex - currentGroupStart + 1}
+                {allSlides[activeIndex]?.text[locale]} - {activeIndex - currentGroupStart + 1}
             </Typography>
 
             <MobileStepper

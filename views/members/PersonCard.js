@@ -1,125 +1,42 @@
 import * as React from 'react';
 import { Stack, ListItemText, Typography, Avatar, Divider } from '@mui/material'
+import { classNames } from '@/content/members'
+import { useDictionary, useLocale } from '@/i18n/LocaleProvider'
 
-const EMBA = ({ person }) => (
-    <>
-        <Typography
-            component="span"
-            variant="body2"
-            color="text"
-        >
-            姓名：{person.name}
-        </Typography>
-        <Typography
-            component="span"
-            variant="body2"
-            color="text"
-        >
-            班別：{person.class}
-        </Typography>
-        <Typography
-            component="span"
-            variant="body2"
-            color="text"
-        >
-            學年度：{person.year}
-        </Typography>
-        <Typography
-            component="span"
-            variant="body2"
-            color="text"
-        >
-            研究方向：{person.researchfield}
-        </Typography>
-    </>
-)
+// 學年度：中文顯示民國年（114），英文換算成西元（2025–26）
+const formatYear = (year, locale) => {
+    if (locale === 'zh') return year
+    const start = Number(year) + 1911
+    return `${start}–${String(start + 1).slice(-2)}`
+}
 
-const MasterPhD = ({ person }) => (
-    <>
-        <Typography
-            component="span"
-            variant="body2"
-            color="text"
-        >
-            姓名：{person.name}
-        </Typography>
-        <Typography
-            component="span"
-            variant="body2"
-            color="text"
-        >
-            班別：{person.class}
-        </Typography>
-        <Typography
-            component="span"
-            variant="body2"
-            color="text"
-        >
-            學年度：{person.year}
-        </Typography>
-        {person.co_advisor &&
-            <Typography
-                component="span"
-                variant="body2"
-                color="text"
-            >
-                共同指導：{person.co_advisor}
+const Details = ({ person }) => {
+    const locale = useLocale()
+    const t = useDictionary().members
+    const name = (locale === 'en' && person.nameEn) || person.name
+
+    return (
+        <>
+            <Typography component="span" variant="body2" color="text">
+                {t.name}{name}
             </Typography>
-        }
-        <Typography
-            component="span"
-            variant="body2"
-            color="text"
-        >
-            研究方向：{person.researchfield}
-        </Typography>
-    </>
-)
-const Master = MasterPhD;
-const PhD = MasterPhD;
-
-const Undergraduate = ({ person }) => (
-    <>
-        <Typography
-            component="span"
-            variant="body2"
-            color="text"
-        >
-            姓名：{person.name}
-        </Typography>
-        <Typography
-            component="span"
-            variant="body2"
-            color="text"
-        >
-            班別：{person.class}
-        </Typography>
-        <Typography
-            component="span"
-            variant="body2"
-            color="text"
-        >
-            學年度：{person.year}
-        </Typography>
-        {person.co_advisor &&
-            <Typography
-                component="span"
-                variant="body2"
-                color="text"
-            >
-                共同指導：{person.co_advisor}
+            <Typography component="span" variant="body2" color="text">
+                {t.class}{classNames[person.class][locale]}
             </Typography>
-        }
-        <Typography
-            component="span"
-            variant="body2"
-            color="text"
-        >
-            研究方向：{person.researchfield}
-        </Typography>
-    </>
-)
-
+            <Typography component="span" variant="body2" color="text">
+                {t.year}{formatYear(person.year, locale)}
+            </Typography>
+            {person.co_advisor &&
+                <Typography component="span" variant="body2" color="text">
+                    {t.coAdvisor}{person.co_advisor[locale]}
+                </Typography>
+            }
+            <Typography component="span" variant="body2" color="text">
+                {t.researchField}{person.researchfield[locale]}
+            </Typography>
+        </>
+    )
+}
 
 export default function PersonCard({ person }) {
 
@@ -146,10 +63,7 @@ export default function PersonCard({ person }) {
             <ListItemText
                 primary={
                     <Stack spacing={.5} p={1}>
-                        {person.grade === 'PhD' ? <PhD {...{ person }} /> :
-                            person.grade === 'EMBA' ? <EMBA {...{ person }} /> :
-                                person.grade === 'Master' ? <Master {...{ person }} /> :
-                                    person.grade === 'Undergraduate' && <Undergraduate {...{ person }} />}
+                        <Details {...{ person }} />
                         <Divider />
                     </Stack>
                 }

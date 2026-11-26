@@ -13,15 +13,15 @@ import ScienceIcon from '@mui/icons-material/Science';
 import GroupsIcon from '@mui/icons-material/Groups';
 import Link from 'next/link';
 import { basePath, localizedPath } from '@/i18n/config';
-import { useLocale } from '@/i18n/LocaleProvider';
+import { useDictionary, useLocale } from '@/i18n/LocaleProvider';
 import LanguageSwitch from './LanguageSwitch';
 
 const pages = [
-    { item: '指導教授', href: '/professor', icon: <PersonIcon /> },
-    { item: '研究領域', href: '/research', icon: <MenuBookIcon /> },
-    { item: '實驗室成果', href: '/research_result', icon: <ScienceIcon /> },
-    { item: '實驗室成員', href: '/members', icon: <GroupsIcon /> },
-    { item: '畢業校友', href: '/graduate_members', icon: <GroupsIcon /> },
+    { key: 'professor', href: '/professor', icon: <PersonIcon /> },
+    { key: 'research', href: '/research', icon: <MenuBookIcon /> },
+    { key: 'researchResult', href: '/research_result', icon: <ScienceIcon /> },
+    { key: 'members', href: '/members', icon: <GroupsIcon /> },
+    { key: 'alumni', href: '/graduate_members', icon: <GroupsIcon /> },
     //{ item: '業界機會', href: '/opportunity', icon: <WorkIcon /> }
 ];
 const display = {
@@ -61,6 +61,7 @@ function NavBar() {
 
     const pathname = basePath(usePathname())
     const locale = useLocale()
+    const t = useDictionary().nav
     const homeHref = localizedPath('/', locale)
 
     const handleOpenNavMenu = (e) => {
@@ -93,7 +94,7 @@ function NavBar() {
                                         color: pathname === page.href ? (theme) => theme.palette.secondary.main : '#000000',
                                         fontWeight: 600
                                     }}>
-                                    {page.item}
+                                    {t[page.key]}
                                 </Button>
                             </Box>
                         ))}
@@ -141,7 +142,7 @@ function NavBar() {
                                             <ListItemIcon sx={{ justifyContent: 'center', alignItems: 'center' }}>
                                                 {page.icon}
                                             </ListItemIcon>
-                                            <ListItemText primary={page.item} />
+                                            <ListItemText primary={t[page.key]} />
                                         </Stack>
                                     </ListItemButton>
                                 </Box>

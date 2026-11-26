@@ -1,5 +1,8 @@
 export type Locale = 'zh' | 'en'
 
+/** 中英文各一份的內容；少填任何一種語言 TypeScript 會報錯 */
+export type Localized = Record<Locale, string>
+
 export const htmlLang: Record<Locale, string> = { zh: 'zh-Hant', en: 'en' }
 
 // 有英文版的路由。新增英文頁面時要同步加在這裡，語言切換按鈕才會出現。
