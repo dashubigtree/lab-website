@@ -12,7 +12,9 @@ import MenuBookIcon from '@mui/icons-material/MenuBook';
 import ScienceIcon from '@mui/icons-material/Science';
 import GroupsIcon from '@mui/icons-material/Groups';
 import Link from 'next/link';
-import { basePath } from '@/i18n/config';
+import { basePath, localizedPath } from '@/i18n/config';
+import { useLocale } from '@/i18n/LocaleProvider';
+import LanguageSwitch from './LanguageSwitch';
 
 const pages = [
     { item: '指導教授', href: '/professor', icon: <PersonIcon /> },
@@ -26,13 +28,13 @@ const display = {
     Above900px: { xs: 'none', md: 'flex' },
     Below900px: { xs: 'flex', md: 'none' }
 }
-const LogoName = ({ flexGrow, variant, xs, md, letterSpacing }) => (
+const LogoName = ({ href, flexGrow, variant, xs, md, letterSpacing }) => (
     <Box sx={{ display: { xs: xs, md: md }, flexGrow: flexGrow }}>
         <Typography
             variant={variant}
             noWrap
             component={Link}
-            href="/"
+            href={href}
             sx={{
                 fontFamily: 'monospace',
                 fontWeight: 700,
@@ -58,6 +60,8 @@ function NavBar() {
     const [anchorElNav, setAnchorElNav] = React.useState(null);
 
     const pathname = basePath(usePathname())
+    const locale = useLocale()
+    const homeHref = localizedPath('/', locale)
 
     const handleOpenNavMenu = (e) => {
         setAnchorElNav(e.currentTarget);
@@ -73,7 +77,7 @@ function NavBar() {
 
                 {/* above 900px*/}
                 <CusToolbar display={display.Above900px}>
-                    <LogoName {...{ variant: 'h4', xs: 'none', md: 'flex', flexGrow: 0, letterSpacing: '.3rem' }} />
+                    <LogoName {...{ href: homeHref, variant: 'h4', xs: 'none', md: 'flex', flexGrow: 0, letterSpacing: '.3rem' }} />
 
                     <Stack direction='row' spacing={1} sx={{ flexGrow: 1, display: display.Above900px, justifyContent: 'flex-end' }}>
                         {pages.map((page, index) => (
@@ -81,7 +85,7 @@ function NavBar() {
                                 <Button
                                     variant="text"
                                     color="secondary"
-                                    href={page.href}
+                                    href={localizedPath(page.href, locale)}
                                     component={Link}
                                     size="large"
                                     disableRipple
@@ -94,11 +98,17 @@ function NavBar() {
                             </Box>
                         ))}
                     </Stack>
+
+                    <Box sx={{ ml: 2 }}>
+                        <LanguageSwitch />
+                    </Box>
                 </CusToolbar>
 
                 {/* below 900px*/}
                 <CusToolbar display={display.Below900px}>
-                    <LogoName {...{ variant: 'h5', xs: 'flex', md: 'none', flexGrow: 1, letterSpacing: '.1rem' }} />
+                    <LogoName {...{ href: homeHref, variant: 'h5', xs: 'flex', md: 'none', flexGrow: 1, letterSpacing: '.1rem' }} />
+
+                    <LanguageSwitch />
 
                     <Box sx={{ display: display.Below900px }}>
                         <IconButton
@@ -123,7 +133,7 @@ function NavBar() {
                                     <ListItemButton
                                         divider
                                         selected={pathname === page.href}
-                                        href={page.href}
+                                        href={localizedPath(page.href, locale)}
                                         component={Link}
                                         sx={{ justifyContent: 'center' }}
                                     >
